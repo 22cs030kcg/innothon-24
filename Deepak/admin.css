@@ -72,6 +72,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 40px;
+    
 }
 
 header h1 {
@@ -92,8 +93,10 @@ section#dashboard {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
+    width: 100%;
+    
 
+}
 .dashboard-card:hover {
     transform: translateY(-10px);
 }
@@ -115,12 +118,21 @@ section#dashboard {
     font-weight: bold;
 }
 .imgnok {
-    display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
-    height: 50vh; 
-    width: 100vh;  
-    margin-left: 130px;
-    opacity: 0.4;
+    position: absolute;
+    top: 50%;  /* Position from the center vertically */
+    left: 50%;  /* Position from the center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center it properly */
+    z-index: 0; /* Position the image behind the form */
+    opacity: 0.4; /* Slight opacity to not overpower the form */
+    width: 100vh;  /* Maintain width at 100vh */
+    height: 50vh;  /* Maintain height at 50vh */
+    object-fit: cover; 
+    padding-left: 50px;/* Ensure the image scales properly */
+}
 
+.dsa{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 20px;
+    z-index: 1;
 }
